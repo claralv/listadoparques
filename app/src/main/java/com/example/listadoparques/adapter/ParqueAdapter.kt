@@ -7,7 +7,7 @@ import com.example.listadoparques.Parque
 import com.example.listadoparques.ParqueProvider.Companion.listaparque
 import com.example.listadoparques.R
 
-class ParqueAdapter(private val listaparque:List<Parque>):RecyclerView.Adapter<ParqueViewHolder>() {
+class ParqueAdapter(private var listaparque:List<Parque>):RecyclerView.Adapter<ParqueViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ParqueViewHolder {
         val layout=LayoutInflater
             .from(parent.context)
@@ -23,4 +23,10 @@ class ParqueAdapter(private val listaparque:List<Parque>):RecyclerView.Adapter<P
     override fun getItemCount(): Int {
         return listaparque.size
          }
+
+    fun actualizarParques(listaparque: List<Parque>) {
+        this.listaparque = listaparque
+        notifyDataSetChanged()
+    }
 }
+
