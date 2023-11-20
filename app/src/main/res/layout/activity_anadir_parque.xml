@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:backgroundTintMode="screen"
+        android:isScrollContainer="true"
+        app:layout_scrollFlags="scroll"
+        tools:context=".AnadirParqueActivity"
+        android:layout_margin="24dp">
+
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="180dp"
+            android:layout_height="164dp"
+            app:layout_constraintBottom_toTopOf="@+id/name"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:srcCompat="@drawable/appimground" />
+
+        <EditText
+            android:id="@+id/name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:minHeight="48dp"
+            android:text="Nombre"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+        <EditText
+            android:id="@+id/description"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:gravity="start|top"
+            android:inputType="textMultiLine"
+            android:minHeight="48dp"
+            android:text="Descripción"
+            app:layout_constraintEnd_toEndOf="@+id/name"
+            app:layout_constraintStart_toStartOf="@+id/name"
+            app:layout_constraintTop_toBottomOf="@+id/name" />
+
+
+        <EditText
+            android:id="@+id/phone"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="text|numberPassword"
+            android:minHeight="48dp"
+            android:singleLine="false"
+            android:text="Teléfono"
+            app:layout_constraintEnd_toEndOf="@+id/description"
+            app:layout_constraintStart_toStartOf="@+id/description"
+            app:layout_constraintTop_toBottomOf="@+id/description" />
+
+        <EditText
+            android:id="@+id/webSite"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:gravity="start|top"
+            android:inputType="textMultiLine"
+            android:minHeight="48dp"
+            android:text="web"
+            app:layout_constraintEnd_toEndOf="@+id/phone"
+            app:layout_constraintStart_toStartOf="@+id/phone"
+            app:layout_constraintTop_toBottomOf="@+id/phone" />
+
+        <TextView
+            android:id="@+id/textViewOpening"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Hora de apertura"
+            app:layout_constraintEnd_toStartOf="@+id/textViewClose"
+            app:layout_constraintStart_toStartOf="@+id/webSite"
+            app:layout_constraintTop_toBottomOf="@+id/webSite" />
+
+        <Spinner
+            android:id="@+id/SpinnerOpeningTime"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:contentDescription="Hora de apertura"
+            android:entries="@array/horas"
+            android:minHeight="48dp"
+            android:spinnerMode="dialog"
+            app:layout_constraintEnd_toEndOf="@+id/textViewOpening"
+            app:layout_constraintStart_toStartOf="@+id/textViewOpening"
+            app:layout_constraintTop_toBottomOf="@+id/textViewOpening" />
+
+        <TextView
+            android:id="@+id/textViewClose"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Hora de cierre"
+            app:layout_constraintEnd_toEndOf="@+id/webSite"
+            app:layout_constraintStart_toEndOf="@+id/textViewOpening"
+            app:layout_constraintTop_toBottomOf="@+id/webSite" />
+
+        <Spinner
+            android:id="@+id/SpinnerClosingTime"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:contentDescription="Hora de cierre"
+            android:entries="@array/horas"
+            android:minHeight="48dp"
+            android:spinnerMode="dialog"
+            app:layout_constraintEnd_toEndOf="@+id/webSite"
+            app:layout_constraintStart_toStartOf="@+id/textViewClose"
+            app:layout_constraintTop_toBottomOf="@+id/textViewClose" />
+
+        <TextView
+            android:id="@+id/textViewActivities"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Actividades"
+            app:layout_constraintStart_toStartOf="@+id/SpinnerOpeningTime"
+            app:layout_constraintTop_toBottomOf="@+id/SpinnerOpeningTime" />
+
+        <CheckBox
+            android:id="@+id/deportes"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Deportes"
+            app:layout_constraintStart_toStartOf="@+id/textViewActivities"
+            app:layout_constraintTop_toBottomOf="@+id/textViewActivities" />
+
+        <CheckBox
+            android:id="@+id/p_infantil"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Parque infantil"
+            app:layout_constraintStart_toStartOf="@+id/deportes"
+            app:layout_constraintTop_toBottomOf="@+id/deportes" />
+
+        <CheckBox
+            android:id="@+id/restaurante"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Restaurante"
+            app:layout_constraintStart_toStartOf="@+id/p_infantil"
+            app:layout_constraintTop_toBottomOf="@+id/p_infantil" />
+
+        <CheckBox
+            android:id="@+id/zonamascotas"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Zona de mascotas"
+            app:layout_constraintStart_toStartOf="@+id/restaurante"
+            app:layout_constraintTop_toBottomOf="@+id/restaurante" />
+        <Button
+            android:id="@+id/btnGuardar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="32dp"
+            android:text="Guardar"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/zonamascotas" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
