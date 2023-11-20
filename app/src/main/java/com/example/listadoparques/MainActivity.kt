@@ -8,8 +8,11 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.listadoparques.adapter.ParqueAdapter
 import com.example.listadoparques.databinding.ActivityMainBinding
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : ActivityWithMenus() {
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
+        setTitle("ListadoParques")
         super.onCreate(savedInstanceState)
         val binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
